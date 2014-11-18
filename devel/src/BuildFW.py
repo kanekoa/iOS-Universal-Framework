@@ -280,7 +280,7 @@ class Project:
             for child in node['targets']:
                 self.build_full_paths(child, base_path)
             projectRefs = node.get('projectReferences', None)
-            if projectRefs is not None:
+            if projectRefs is not None and projectRefs[0] is not None:
                 for child in projectRefs[0].values():
                     self.build_full_paths(child, base_path)
 
